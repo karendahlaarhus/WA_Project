@@ -1,0 +1,40 @@
+body {
+  background-color: whitesmoke;
+}
+header {
+  background-color: #1f2833;
+  color: whitesmoke;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+}
+nav a {
+  margin: 5px 10px;
+  color: whitesmoke;
+}
+
+.content {
+  margin-top: 150px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+footer {
+  background-color: #1f2833;
+  color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  height: 50px;
+}
