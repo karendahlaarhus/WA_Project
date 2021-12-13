@@ -11,18 +11,24 @@
   <body>
     <header>
       <h1>Movie Theater</h1>
+      {% if current_user.is_authenticated: %}
+      <nav>
+        <a href="{{ url_for('main.index') }}">Home</a>
+        <a href="{{ url_for('main.reservations') }}">Reservations</a>
+        <a href="{{ url_for('auth.logout') }}">Logout</a>
+      </nav>
+      {% else %}
       <nav>
         <a href="{{ url_for('main.index') }}">Home</a>
         <a href="{{ url_for('auth.login') }}">Log in</a>
         <a href="{{ url_for('auth.signup') }}">Sign up</a>
       </nav>
+      {% endif %}
+      
     </header>
     <section class="content">
       {% block content %}{% endblock %}
-      {% if current_user.is_authenticated: %}
-        <div>User: {{current_user.name}}</div>
-        <div><a href="{{ url_for('auth.logout') }}">Logout</a></div>
-      {% endif %}
+     
     </section>
     <footer>Developed for Web applications</footer>
   </body>

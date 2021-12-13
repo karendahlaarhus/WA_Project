@@ -11,7 +11,7 @@ def create_app(test_config=None):
     app.config["SECRET_KEY"] = b"\x8c\xa5\x04\xb3\x8f\xa1<\xef\x9bY\xca/*\xff\x12\xfb"
     app.config[
         "SQLALCHEMY_DATABASE_URI"
-    ] = "mysql+mysqldb://22_appweb_07:u8ZLu,z4@mysql.lab.it.uc3m.es/22_appweb_07a"
+    ] = "mysql+mysqldb://22_appweb_07:u8ZLu,z4@mysql.lab.it.uc3m.es/22_appweb_07b"
     app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
     db.init_app(app)
 

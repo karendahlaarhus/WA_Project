@@ -1,5 +1,5 @@
 body {
-  background-color: whitesmoke;
+  background-color: #33475f;
 }
 header {
   background-color: #1f2833;
@@ -9,6 +9,7 @@ header {
   width: 100%;
   top: 0;
   left: 0;
+  box-shadow: darkgrey;
 }
 
 nav {
@@ -22,6 +23,7 @@ nav a {
 
 .content {
   margin-top: 150px;
+  margin-bottom: 150px;
   margin-left: 10%;
   margin-right: 10%;
 }
@@ -38,3 +40,54 @@ footer {
   bottom: 0;
   height: 50px;
 }
+
+/*Movie cards*/
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card_item {
+  display: flex;
+  padding: 1rem;
+  @media(min-width: 40rem) {
+    width: 50%;
+  }
+  @media(min-width: 56rem) {
+    width: 33.3333%;
+  }
+}
+
+.card {
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.card_content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.card_title {
+  color: darkgrey;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.card_text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+

@@ -7,9 +7,9 @@ class User(flask_login.UserMixin, db.Model):
     email = db.Column(db.String(128), unique=True, nullable=False)
     name = db.Column(db.String(64), nullable = False)
     password = db.Column(db.String(100), nullable=False)
-    # reservations = db.relationship('Reservation', backref='user', lazy=False)
+    reservations = db.relationship('Reservation', backref='user', lazy=False)
 
-""" class Movie(db.Model):
+class Movie(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(128), unique=True, nullable=False)
     synopsis = db.Column(db.String(500), nullable = False)
@@ -33,4 +33,4 @@ class Reservation(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     projection_id = db.Column(db.Integer, db.ForeignKey("projection.id"), nullable=False)
     seats = db.Column(db.String(64), nullable = False)
-    timestamp = db.Column(db.String(100), nullable=False) """
+    timestamp = db.Column(db.DateTime(), nullable=False) 

@@ -1,0 +1,22 @@
+{% extends 'base.html' %} {% block content %}
+<section>
+<div class="projections">
+    <h2>{{projection.id}}</h2>
+    <p>{{projection.movie_id}}</p>
+    <p>{{projection.screen_id}}</p>
+    <p>{{projection.datetime}}</p>
+
+    <form action="{{ url_for('main.make_reservation', projection_id=projection.id) }}" method="post">
+        <div>
+          <label>User id: <input type="number" name="user_id" required /></label>
+        </div>
+        <div>
+          <label>Seats: <input type="number" name="seats" required /></label>
+        </div>
+        
+        
+        <div><input type="submit" value="Make reservation" /></div>
+      </form>
+</div>
+</section>
+{% endblock %}

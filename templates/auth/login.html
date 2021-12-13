@@ -7,6 +7,11 @@
   <div>
     <label>Password: <input type="password" name="password" required /></label>
   </div>
+  {% with messages = get_flashed_messages() %}
+    {% for message in messages %}
+      <div class="notification">{{message}} </div>
+   {% endfor %}
+  {% endwith %}
   <div><input type="submit" value="Login" /></div>
 </form>
 {% endblock %}

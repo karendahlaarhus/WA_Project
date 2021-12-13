@@ -1,8 +1,6 @@
 from flask import Blueprint, render_template, request, redirect, url_for, flash
 import flask_login
-from . import db, bcrypt
-
-from . import model
+from . import db, bcrypt, model
 
 bp = Blueprint("auth", __name__)
 
@@ -29,14 +27,13 @@ def signup_post():
     new_user = model.User(email=email, name=username, password=password_hash)
     db.session.add(new_user)
     db.session.commit()
+    flask_login.login_user(new_user)
     flash("You have successfully signed up!")
     return redirect(url_for("main.index"))
     
-
 @bp.route("/login")
 def login():
     return render_template("auth/login.html")
-
 
 @bp.route("/login", methods=["POST"])
 def login_post():
