@@ -1,35 +1,265 @@
+
+
 body {
-  background-color: #33475f;
+  background-color:#121212  ;
+  font-family: "Bakbak One", cursive;
 }
+
+/*Navbar*/
 header {
-  background-color: #1f2833;
-  color: whitesmoke;
-  text-align: center;
-  position: fixed;
-  width: 100%;
   top: 0;
   left: 0;
-  box-shadow: darkgrey;
+  width: 100%;
+  position: fixed;
 }
 
-nav {
+.navbar {
   display: flex;
-  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10px;
+  background-color:#1f1f1f;
 }
-nav a {
-  margin: 5px 10px;
+
+.logo a{
+  font-size: 38px;
+  color:#CF6679; 
+  text-decoration: none;
+}
+
+
+.nav_links a {
+  text-decoration: none;
+  color: whitesmoke;
+
+}
+
+li{
+  list-style: none;
+}
+
+.menu{
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+}
+
+.menu li{
+  padding: 5px 14px;
+  font-size: 25px;
   color: whitesmoke;
 }
 
-.content {
-  margin-top: 150px;
-  margin-bottom: 150px;
+/*Main page content*/
+.main_image {
+  height: 600px;
+  width: 100% !important;
+  overflow: hidden;
+  position: static;
+  z-index: -1;
+}
+
+.movies_container{
+  display: flex;
+  justify-content: center;
   margin-left: 10%;
   margin-right: 10%;
 }
+.projections_container{
+  display: flex;
+  justify-content: space-between;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-bottom: 100px;
+}
 
+
+/*Cards*/
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.card_item {
+  display: flex;
+  padding: 1rem;
+}
+
+.card {
+  background-color:#252525;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: 12px;
+  width: 230px;
+  height: 150px;
+}
+
+.card_content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.card_title a {
+  color: whitesmoke;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.card_text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+  color: rgba(143, 143, 143);
+}
+
+
+/*login and signup*/
+.container{
+  margin-top: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.content_container{
+  width: 500px;
+  height: 350px;
+}
+
+.form_container{
+  display: flex;
+  justify-content: center;
+
+  margin-top: 5px;
+  padding-top: 20px;
+
+  border-radius: 12px;
+  background-color:#1f1f1f;
+}
+
+.login{
+  width: 500px;
+  height: 350px;
+}
+.signup{
+  width: 500px;
+  height: 450px;
+}
+
+h1{
+  color: whitesmoke;
+  font-size: 32px; 
+  text-align: center; 
+}
+
+.label{
+  font-size: 11px;
+  color: rgba(143, 143, 143);
+  text-transform: uppercase;
+}
+
+input{
+  border: none;
+  border-bottom: solid rgba(143, 143, 143) 1px;
+  margin-bottom: 20px;
+  background: none;
+  color: rgba(255, 255, 255, 0.555);
+  height: 20px;
+  width: 300px;
+}
+
+.notification {
+  color: rgba(143, 143, 143);
+}
+
+.submit_btn{
+  cursor: pointer; 
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 2px 7px #38d39f70;
+
+  background: #38d39f70;
+  color: whitesmoke;
+
+  width: 80px;
+  height: 35px;
+  margin-top: 15px;
+}
+
+.submit_btn:hover{
+  box-shadow: none;
+}
+
+/*Movie view*/
+.movie_view {
+  margin-top: 150px;
+  margin-left: 10%;
+  margin-right: 10%;
+  color: whitesmoke;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.movie_info{
+  margin-bottom: 50px;
+}
+
+.movie_projections{
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 100px;
+}
+
+/*Make reservation*/
+.reserve_btn{
+  cursor: pointer; 
+  border-radius: 8px;
+  border: none;
+  box-shadow: 2px 2px 7px #38d39f70;
+
+  background: #38d39f70;
+  color: whitesmoke;
+
+  width: 150px;
+  height: 35px;
+  margin-top: 15px;
+}
+.title {
+  color: whitesmoke;
+}
+.info {
+  color: whitesmoke;
+}
+
+/*Reservations*/
+.reservations_container{
+  margin-top: 150px;
+  text-align: center;
+}
+
+.res_label{
+  margin-bottom: 0;
+  font-size: 11px;
+  color: rgba(143, 143, 143);
+  font-weight: 100;
+}
+
+
+/*Footer*/
 footer {
-  background-color: #1f2833;
+  background-color:#1f1f1f;
   color: whitesmoke;
   display: flex;
   justify-content: center;
@@ -40,54 +270,3 @@ footer {
   bottom: 0;
   height: 50px;
 }
-
-/*Movie cards*/
-.cards {
-  display: flex;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.card_item {
-  display: flex;
-  padding: 1rem;
-  @media(min-width: 40rem) {
-    width: 50%;
-  }
-  @media(min-width: 56rem) {
-    width: 33.3333%;
-  }
-}
-
-.card {
-  background-color: white;
-  display: flex;
-  flex-direction: column;
-  overflow: hidden;
-}
-
-.card_content {
-  display: flex;
-  flex: 1 1 auto;
-  flex-direction: column;
-  padding: 1rem;
-}
-
-.card_title {
-  color: darkgrey;
-  font-size: 1.25rem;
-  font-weight: 300;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-.card_text {
-  flex: 1 1 auto;
-  font-size: 0.875rem;
-  line-height: 1.5;
-  margin-bottom: 1.25rem;
-}
-
-

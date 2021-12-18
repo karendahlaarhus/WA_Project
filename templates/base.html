@@ -7,28 +7,40 @@
       rel="stylesheet"
       href="{{ url_for('static', filename='style.css') }}"
     />
+    <link 
+      href="https://fonts.googleapis.com/css2?family=Bakbak+One&display=swap"
+      rel="stylesheet" />
   </head>
   <body>
     <header>
-      <h1>Movie Theater</h1>
-      {% if current_user.is_authenticated: %}
-      <nav>
-        <a href="{{ url_for('main.index') }}">Home</a>
-        <a href="{{ url_for('main.reservations') }}">Reservations</a>
-        <a href="{{ url_for('auth.logout') }}">Logout</a>
-      </nav>
-      {% else %}
-      <nav>
-        <a href="{{ url_for('main.index') }}">Home</a>
-        <a href="{{ url_for('auth.login') }}">Log in</a>
-        <a href="{{ url_for('auth.signup') }}">Sign up</a>
-      </nav>
-      {% endif %}
+      <nav class=navbar>
+      <h1 class="logo"><a href="{{ url_for('main.index') }}">Movie Theater</a></h1>
       
+      {% if current_user.is_authenticated: %}
+      <ul class="nav_links">
+        <div class="menu">
+          <li><a href="{{ url_for('main.index') }}">Home</a></li>
+          <li><a href="{{ url_for('main.reservations_view') }}">Reservations</a></li>
+          <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+        </div>  
+      </ul>
+    
+      {% else %}
+      
+        <ul class="nav_links">
+          <div class="menu">
+            <li><a href="{{ url_for('main.index') }}">Home</a></li>
+            <li><a href="{{ url_for('auth.login') }}">Log in</a></li>
+            <li><a href="{{ url_for('auth.signup') }}">Sign up</a></li>
+          </div>
+        </ul>
+     
+      {% endif %}
+
+    </nav>
     </header>
     <section class="content">
       {% block content %}{% endblock %}
-     
     </section>
     <footer>Developed for Web applications</footer>
   </body>

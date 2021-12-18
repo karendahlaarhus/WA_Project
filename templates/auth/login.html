@@ -1,17 +1,26 @@
 {% extends 'base.html' %} {% block content %}
-<h2>Log in</h2>
-<form action="{{ url_for('auth.login') }}" method="post">
-  <div>
-    <label>Email: <input type="email" name="email" required /></label>
+<div class="container">
+  <div class="content_container">
+    <div class="form_container login">
+      <form action="{{ url_for('auth.login') }}" method="post">
+        <h1 class="title">Log in</h1>
+          <div>
+            <span class="label">Email: </span><br><input type="email" name="email" required />
+          </div>
+                    
+          <div>
+            <span class="label">Password: </span><br><input type="password" name="password" required />
+          </div>
+          {% with messages = get_flashed_messages() %}
+            {% for message in messages %}
+              <div class="notification">{{message}} </div>
+            {% endfor %}
+          {% endwith %}
+        <div><input type="submit" value="Log in" class="submit_btn"/></div>
+        </form>
+      </div>
   </div>
-  <div>
-    <label>Password: <input type="password" name="password" required /></label>
-  </div>
-  {% with messages = get_flashed_messages() %}
-    {% for message in messages %}
-      <div class="notification">{{message}} </div>
-   {% endfor %}
-  {% endwith %}
-  <div><input type="submit" value="Login" /></div>
-</form>
+</div>
+
+
 {% endblock %}

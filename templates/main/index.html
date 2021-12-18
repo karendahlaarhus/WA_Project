@@ -1,7 +1,17 @@
 {% extends 'base.html' %} {% block content %}
 <section>
-  <h2>Movie showtimes</h2>
-  {% include 'movies_template.html' %}
-  {% include 'projections_template.html' %}
+  <div class="main_image">
+    <img src="https://media-exp1.licdn.com/dms/image/C561BAQHowLZFjFa2zQ/company-background_10000/0/1551202933301?e=2159024400&amp;v=beta&amp;t=5rS1Anz6j2J7FlJd42wdoxG2m1_M_GyGCCdGzkvfqM8" >
+  </div>
+  <h1>All movies</h1>
+  <div class="movies_container">
+    {% include 'movies_template.html' %}
+  </div>
+  
+  <h1>All projections for the next three days</h1>
+  <div class="projections_container">
+    {% include 'projections_template.html' %}
+  </div>
+  
 </section>
 {% endblock %}

@@ -1,25 +1,30 @@
 {% extends 'base.html' %} {% block content %}
-<h2>Sign Up</h2>
-<form action="{{ url_for('auth.signup') }}" method="post">
-  <div>
-    <label>Email: <input type="email" name="email" required /></label>
+<div class="container">
+  <div class="content_container">
+    <div class="form_container signup">
+      <form action="{{ url_for('auth.signup') }}" method="post">
+        <h1 class="title">Sign up</h1>
+        <div>
+          <span class="label">Email: </span><br><input type="email" name="email" required />
+        </div>
+        <div>
+          <span class="label">Username:</span><br><input type="text" name="username" required />
+        </div>
+        <div>
+          <span class="label">Password: </span><br><input type="password" name="password" required />
+        </div>
+        <div>
+          <span class="label">Repeat password: </span><br><input type="password" name="password_repeat" required
+          />
+        </div>
+        {% with messages = get_flashed_messages() %}
+          {% for message in messages %}
+            <div class="notification">{{message}} </div>
+        {% endfor %}
+        {% endwith %}
+        <div><input type="submit" value="Sign Up" class="submit_btn" /></div>
+      </form>
+      </div>
+    </div>
   </div>
-  <div>
-    <label>Username: <input type="text" name="username" required /></label>
-  </div>
-  <div>
-    <label>Password: <input type="password" name="password" required /></label>
-  </div>
-  <div>
-    <label
-      >Repeat password: <input type="password" name="password_repeat" required
-    /></label>
-  </div>
-  {% with messages = get_flashed_messages() %}
-    {% for message in messages %}
-      <div class="notification">{{message}} </div>
-   {% endfor %}
-  {% endwith %}
-  <div><input type="submit" value="Sign Up" /></div>
-</form>
 {% endblock %}

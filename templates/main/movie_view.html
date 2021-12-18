@@ -1,10 +1,17 @@
 {% extends 'base.html' %} {% block content %}
-<section>
-<div class="movie">
-    <h2>{{movie.title}}</h2>
-    <p>{{movie.synopsis}}</p>
-    <p>{{movie.duration}}</p>
-    <p>{{movie.leading_actor}}</p>
+<section class="movie_view">
+    
+    <div class="movie_info">
+        <h1>{{movie.title}}</h1>
+        <p>Description: {{movie.synopsis}}</p>
+        <p>Duration: {{movie.duration}}</p>
+        <p>Leading actor: {{movie.leading_actor}}</p>
+    </div>
+  
+    <h2>Upcoming projections for {{movie.title}}:</h2>
+<div class="movie_projections">
+    
+    {% include 'projections_template.html' %}
 </div>
 </section>
 {% endblock %}

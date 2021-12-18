@@ -15,12 +15,12 @@ def signup_post():
     password = request.form.get("password")
 
     if password != request.form.get("password_repeat"):
-        flash("Sorry, passwords are different")
+        flash("The passwords you provided are not identical")
         return redirect(url_for("auth.signup"))
 
     user = model.User.query.filter_by(email=email).first()
     if user:
-        flash("Sorry, the email you provided is already registereds")
+        flash("The email you provided is already registereds")
         return redirect(url_for("auth.signup"))
 
     password_hash = bcrypt.generate_password_hash(password).decode("utf-8")
@@ -28,7 +28,6 @@ def signup_post():
     db.session.add(new_user)
     db.session.commit()
     flask_login.login_user(new_user)
-    flash("You have successfully signed up!")
     return redirect(url_for("main.index"))
     
 @bp.route("/login")

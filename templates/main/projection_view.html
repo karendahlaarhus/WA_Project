@@ -1,22 +1,31 @@
 {% extends 'base.html' %} {% block content %}
 <section>
-<div class="projections">
-    <h2>{{projection.id}}</h2>
-    <p>{{projection.movie_id}}</p>
-    <p>{{projection.screen_id}}</p>
-    <p>{{projection.datetime}}</p>
-
-    <form action="{{ url_for('main.make_reservation', projection_id=projection.id) }}" method="post">
-        <div>
-          <label>User id: <input type="number" name="user_id" required /></label>
+  <div class="container">
+    <div class="content_container">
+      <div class="form_container login">
+        <form action="{{ url_for('main.make_reservation', projection_id=projection.id) }}" method="post">
+          <h3 class="title">Make reservation for {{projection.movie.title}}</h3>
+            <div>
+              <p class="info">Date and time: {{projection.datetime}}</p>
+              <p class="info">{{projection.screen.name}}</p>
+            </div>
+                      
+            <div>
+              <span class="label">Number of seats: </span><br><input type="number" name="seats" required />
+              <p class="info">There are {{free_seats}} free seats for this projection </p>
+            </div>
+            {% with messages = get_flashed_messages() %}
+              {% for message in messages %}
+                <div class="notification">{{message}} </div>
+              {% endfor %}
+            {% endwith %}
+            
+          <div><input type="submit" value="Make reservation" class="reserve_btn "/></div>
+          </form>
         </div>
-        <div>
-          <label>Seats: <input type="number" name="seats" required /></label>
-        </div>
-        
-        
-        <div><input type="submit" value="Make reservation" /></div>
-      </form>
-</div>
+    </div>
+  </div>
 </section>
 {% endblock %}
+
+

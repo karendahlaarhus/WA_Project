@@ -1,0 +1,13 @@
+{% extends 'base.html' %} {% block content %}
+<section class="movie_view">
+    <div class="reservation_info">
+        <h1>Reservation: {{reservation.projection.movie.title}}</h1>
+        <p>Reservation id: {{reservation.id}}</p>
+        <p>{{reservation.projection.screen.name}}</p>
+        <p>Date and time: {{reservation.projection.datetime}}</p>
+        <p>User: {{reservation.user.name}}</p>
+        <p>Number of seats: {{reservation.seats}}</p>
+        <p>Confirmation timestamp: {{reservation.timestamp}}</p>
+    </div>
+</section>
+{% endblock %}
